@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use DateTimeImmutable;
 
 #[Route('/admin/comment')]
 class AdminCommentController extends AbstractController
@@ -25,6 +26,8 @@ class AdminCommentController extends AbstractController
     public function new(Request $request, CommentRepository $commentRepository): Response
     {
         $comment = new Comment();
+        date_default_timezone_set('Europe/Paris');
+        $comment->setCreatedAt(new DateTimeImmutable());
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
