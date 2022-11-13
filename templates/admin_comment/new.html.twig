@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Comment{% endblock %}
+
+{% block body %}
+    <h1>Crée un nouveau commentaire</h1>
+
+    
+    {{ include('admin_comment/_form.html.twig', {'button_label' : 'Enregistrer'}) }}
+
+    <a  href="{{ path('app_admin_comment_index') }}">Revenir à la liste</a>
+{% endblock %}

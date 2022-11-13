@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>Utilisateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Identifant</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Vérifié</th>
+                <td>{{ user.isVerified ? 'Oui' : 'Non' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary"  href="{{ path('app_admin_user_index') }}">Revenir à la liste</a>
+
+    <a class="btn btn-primary" href="{{ path('app_admin_user_edit', {'id': user.id}) }}">Modifier</a>
+
+    {{ include('admin_user/_delete_form.html.twig') }}
+{% endblock %}

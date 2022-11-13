@@ -72,4 +72,11 @@ class Category
 
         return $this;
     }
+    // Explique à symfony que un objet category doit être retranscrit de cette façon si chaine de caractère
+    public function __toString() {
+        return $this ->name;
+    }
+
+
+
 }
