@@ -3,12 +3,12 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    <h1>Utilisateur</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Identifant</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
@@ -16,15 +16,15 @@
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>IsVerified</th>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <th>Vérifié</th>
+                <td>{{ user.isVerified ? 'Oui' : 'Non' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_user_index') }}">back to list</a>
+    <a class="btn btn-primary"  href="{{ path('app_admin_user_index') }}">Revenir à la liste</a>
 
-    <a href="{{ path('app_admin_user_edit', {'id': user.id}) }}">edit</a>
+    <a class="btn btn-primary" href="{{ path('app_admin_user_edit', {'id': user.id}) }}">Modifier</a>
 
     {{ include('admin_user/_delete_form.html.twig') }}
 {% endblock %}

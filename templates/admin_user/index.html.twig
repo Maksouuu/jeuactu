@@ -3,15 +3,14 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <h1>Utilisateurs</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Identifiant</th>
                 <th>Email</th>
-                <th>IsVerified</th>
-                <th>actions</th>
+                <th>Vérifié</th>
             </tr>
         </thead>
         <tbody>
@@ -19,10 +18,10 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <td>{{ user.isVerified ? 'Oui' : 'Non' }}</td>
                 <td>
-                    <a href="{{ path('app_admin_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_admin_user_edit', {'id': user.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('app_admin_user_show', {'id': user.id}) }}">Afficher</a>
+                    <a class="btn btn-primary" href="{{ path('app_admin_user_edit', {'id': user.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +32,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_user_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('app_admin_user_new') }}">Crée un nouveau utilisateur</a>
 {% endblock %}

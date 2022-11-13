@@ -8,22 +8,18 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ article.title }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Contenu</th>
                 <td>{{ article.content }}</td>
             </tr>
         </tbody>
     </table>
 
     <div>
-        <a href="{{ path('app_comment_new', {'id': article.id}) }}">Ajouter un commentaire</a>
+        <a href="{{ path('app_comment_new', {'id': article.id}) }}" class="btn btn-primary" role="button">Ajouter un commentaire</a>
     </div>
 
     <div>
