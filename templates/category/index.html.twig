@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}HistoireEnLigne - Categorie{% endblock %}
 
 {% block body %}
     <h1><Categories></Categories></h1>
@@ -16,7 +16,7 @@
             <tr>
                 <td>{{ category.name }}</td>
                 <td>
-                    <a href="{{ path('app_category_show', {'id': category.id}) }}">Consulter les articles</a>
+                    <a class="btn btn-primary" href="{{ path('app_category_show', {'id': category.id}) }}">Consulter les articles</a>
                 </td>
             </tr>
         {% else %}
